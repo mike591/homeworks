@@ -19,8 +19,10 @@ class Board
   end
 
   def valid_move?(start_pos)
-    raise "Invalid starting cup" if start_pos > @cups.size
+    possible_pos = [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12]
+    raise "Invalid starting cup" unless possible_pos.include?(start_pos)
     raise "Invalid starting cup" if @cups[start_pos] == []
+    return true
   end
 
   def make_move(start_pos, current_player_name)
